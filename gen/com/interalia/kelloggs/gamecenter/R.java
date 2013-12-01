@@ -24,17 +24,19 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000c;
+        public static final int ScrollView1=0x7f080006;
+        public static final int action_settings=0x7f08000e;
         public static final int btnLogin=0x7f080003;
         public static final int btnRegister=0x7f080005;
-        public static final int checkBox1=0x7f080009;
-        public static final int checkBox2=0x7f08000a;
-        public static final int editText4=0x7f080007;
-        public static final int editText5=0x7f080008;
+        public static final int btnSignUp=0x7f08000d;
+        public static final int chkFemale=0x7f08000b;
+        public static final int chkMale=0x7f08000a;
         public static final int main_layout=0x7f080000;
-        public static final int spinner1=0x7f08000b;
+        public static final int spnCountry=0x7f08000c;
         public static final int textView1=0x7f080004;
-        public static final int txtEmail=0x7f080006;
+        public static final int txtBirthday=0x7f080008;
+        public static final int txtEmail=0x7f080007;
+        public static final int txtNickname=0x7f080009;
         public static final int txtPassword=0x7f080002;
         public static final int txtUsername=0x7f080001;
     }
