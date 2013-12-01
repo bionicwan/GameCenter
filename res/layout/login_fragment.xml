@@ -39,7 +39,7 @@
         android:layout_gravity="center" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnRegister"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="97dp"
         android:layout_height="34dp"

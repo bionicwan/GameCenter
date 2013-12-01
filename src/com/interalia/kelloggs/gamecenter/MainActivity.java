@@ -24,22 +24,18 @@ public class MainActivity extends FragmentActivity implements ListenerInterface{
         String token = settings.getString("AccessToken", "");
         
         FragmentManager fm = getSupportFragmentManager();
-        loginFragment = new LoginFragment();
+        loginFragment = LoginFragment.newInstance(this);
         welcomeFragment = new WelcomeFragment();
         
         FragmentTransaction transaction = fm.beginTransaction();
-        transaction.add(R.id.my_layout, loginFragment, "login");
-        transaction.add(R.id.my_layout, welcomeFragment, "welcome");
         
         if(token != "")
         {
-        	transaction.show(welcomeFragment);
-        	transaction.hide(loginFragment);
+        	transaction.add(R.id.main_layout, welcomeFragment, "welcome");
         }
         else
         {
-        	transaction.show(loginFragment);
-        	transaction.hide(welcomeFragment);
+        	transaction.add(R.id.main_layout, loginFragment, "login");
         }
         
         transaction.commit();
@@ -66,8 +62,7 @@ public class MainActivity extends FragmentActivity implements ListenerInterface{
 		    editor.putString("AccessToken", token);
 		    editor.commit();
 		    
-		    transaction.hide(loginFragment);
-		    transaction.show(welcomeFragment);
+		    transaction.replace(R.id.main_layout, welcomeFragment);
 		    transaction.commit();
 		}
 

@@ -1,8 +1,6 @@
 package com.interalia.kelloggs.gamecenter;
 
-import java.util.ArrayList;
-
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,14 +15,21 @@ import com.interalia.kelloggs.gamecenter.web.ListenerInterface;
 import com.interalia.kelloggs.gamecenter.web.ResponseInterface;
 import com.interalia.kelloggs.gamecenter.web.task.LoginTask;
 
-public class LoginFragment extends Fragment implements OnClickListener, ResponseInterface {
+public class LoginFragment extends Fragment implements OnClickListener {
 	
 	private Button btnLogin;
+	private Button btnRegister;
 	private EditText txtUsername;
 	private EditText txtPassword;
 	private ResponseInterface response;
 	private UserPojo user;
 	private ListenerInterface listener;
+	
+	public static LoginFragment newInstance(ListenerInterface listener){
+		LoginFragment login = new LoginFragment();
+		login.listener = listener;
+		return login;
+	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, 
@@ -40,36 +45,35 @@ public class LoginFragment extends Fragment implements OnClickListener, Response
 		super.onActivityCreated(savedInstanceState);
 	    
 	    btnLogin = (Button)getView().findViewById(R.id.btnLogin);
+	    btnRegister = (Button)getView().findViewById(R.id.btnRegister);
 	    txtUsername = (EditText)getView().findViewById(R.id.txtUsername);
 	    txtPassword = (EditText)getView().findViewById(R.id.txtPassword);
 	    btnLogin.setOnClickListener(this);
+	    btnRegister.setOnClickListener(this);
 	}
 
 	@Override
-	public void onClick(View arg0) {
+	public void onClick(View view) {
 		// TODO Auto-generated method stub
-		String username = txtUsername.getText().toString();
-		String password = txtPassword.getText().toString();
-		LoginTask task = new LoginTask(this);
-		task.execute(username, password);
+		
+		switch(view.getId()){
+		case R.id.btnLogin:
+			String username = txtUsername.getText().toString();
+			String password = txtPassword.getText().toString();
+			LoginTask task = new LoginTask(new ResponseInterface() {
+				@Override
+				public void onResultResponse(Object obj) {
+					// TODO Auto-generated method stub
+					listener.onDataPass(obj);
+				}
+			});
+			task.execute(username, password);
+			
+		case R.id.btnRegister:
+			Intent i = new Intent(getActivity(), RegistrationActivity.class);
+			startActivity(i);
+		}
+			
+			
 	}
-
-	@Override
-	public void onAttach(Activity activity) {
-		// TODO Auto-generated method stub
-		super.onAttach(activity);
-		if (activity instanceof ListenerInterface) {
-	        listener = (ListenerInterface) activity;
-	      } else {
-	        throw new ClassCastException(activity.toString()
-	            + " must implemenet LoginFragment.ListenerInterface");
-	      }
-	}
-
-	@Override
-	public void onResultResponse(Object obj) {
-		// TODO Auto-generated method stub
-		listener.onDataPass(obj);
-	}
-
 }
