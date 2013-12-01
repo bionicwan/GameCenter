@@ -68,10 +68,12 @@ public class LoginFragment extends Fragment implements OnClickListener {
 				}
 			});
 			task.execute(username, password);
+			break;
 			
 		case R.id.btnRegister:
 			Intent i = new Intent(getActivity(), RegistrationActivity.class);
 			startActivity(i);
+			break;
 		}
 			
 			

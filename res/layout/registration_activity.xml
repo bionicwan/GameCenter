@@ -38,7 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/hint_birthday" />
+            android:hint="@string/hint_birthday"
+            android:inputType="date" />
 
         <EditText
             android:id="@+id/txtNickname"
@@ -46,7 +47,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/hint_nickname"
-            android:inputType="date" />
+            android:inputType="date|textPersonName" />
 
         <TextView
             android:id="@+id/textView1"

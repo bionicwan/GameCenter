@@ -2,7 +2,6 @@ package com.interalia.kelloggs.gamecenter.web.task;
 
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
-import java.util.ArrayList;
 
 import org.json.JSONException;
 
@@ -36,7 +35,8 @@ public class LoginTask extends AsyncTask<String, Void, UserPojo> {
 	@Override
 	protected UserPojo doInBackground(String... arg0) {
 		// TODO Auto-generated method stub
-		String url = "http://mgp-services.interalia.net/GameCenterService.svc/UserLogin/?email=" + arg0[0] + "&password=" + arg0[1];
+		String url = "http://mgp-services.interalia.net/GameCenterService.svc/UserLogin/?email=" + arg0[0] 
+				+ "&password=" + arg0[1];
 		httpClient = new HttpPostClient(url);
 		String postResult = httpClient.postExecute(null);
 		resultPojo = resultParser.parseJson(postResult);
