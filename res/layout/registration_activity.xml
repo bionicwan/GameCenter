@@ -7,15 +7,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="10dp" >
 
         <EditText
             android:id="@+id/txtUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/hint_username" />
+            android:hint="@string/hint_username" >
+
+            <requestFocus />
+        </EditText>
 
         <EditText
             android:id="@+id/txtPassword"
@@ -24,6 +27,15 @@
             android:ems="10"
             android:hint="@string/hint_password"
             android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/txtConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_confirm_password"
+            android:inputType="textPassword" >
+        </EditText>
 
         <EditText
             android:id="@+id/txtEmail"
@@ -49,6 +61,11 @@
             android:hint="@string/hint_nickname"
             android:inputType="date|textPersonName" />
 
+        <android.support.v7.widget.Space
+            android:id="@+id/space1"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp" />
+
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
@@ -56,27 +73,51 @@
             android:text="@string/GenderField"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <CheckBox
-            android:id="@+id/chkMale"
+        <RadioGroup
+            android:id="@+id/radioGroup1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/GenderMale" />
+            android:layout_height="wrap_content" >
 
-        <CheckBox
-            android:id="@+id/chkFemale"
+            <RadioButton
+                android:id="@+id/rbtnMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/GenderMale" />
+
+            <RadioButton
+                android:id="@+id/rbtnFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/GenderFemale" />
+        </RadioGroup>
+
+        <android.support.v7.widget.Space
+            android:id="@+id/space2"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp" />
+
+        <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/GenderFemale" />
+            android:text="@string/txt_country"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <Spinner
             android:id="@+id/spnCountry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <android.support.v7.widget.Space
+            android:id="@+id/space3"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp" />
+
         <Button
             android:id="@+id/btnSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/button_register" />
     </LinearLayout>
 

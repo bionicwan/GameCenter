@@ -17,6 +17,7 @@
     <string name="GenderFemale">Female</string>
     <string name="GenderField">Gender</string>
     <string name="btn_signup">Sign Up</string>
-    <string name="hint_confirm_password">Password Confirmation</string>
+    <string name="hint_confirm_password">Password confirmation</string>
+    <string name="txt_country">Country</string>
 
 </resources>

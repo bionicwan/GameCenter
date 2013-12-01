@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 
 import com.interalia.kelloggs.gamecenter.pojo.UserPojo;
+import com.interalia.kelloggs.gamecenter.utilities.ActivitySplitAnimationUtil;
 import com.interalia.kelloggs.gamecenter.web.ListenerInterface;
 
 public class MainActivity extends FragmentActivity implements ListenerInterface{
@@ -18,7 +19,13 @@ public class MainActivity extends FragmentActivity implements ListenerInterface{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        ActivitySplitAnimationUtil.prepareAnimation(this);
+        
         setContentView(R.layout.activity_main);
+        
+        // Animation duration of 1 second
+        ActivitySplitAnimationUtil.animate(this, 2000);
         
         SharedPreferences settings = getSharedPreferences("AppSettings", 0);
         String token = settings.getString("AccessToken", "");

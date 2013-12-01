@@ -15,8 +15,10 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.interalia.kelloggs.gamecenter.MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.interalia.kelloggs.gamecenter.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,6 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.interalia.kelloggs.gamecenter.RegistrationActivity"></activity>
+        <activity android:name="com.interalia.kelloggs.gamecenter.MainActivity"></activity>
     </application>
 
 </manifest>

@@ -5,19 +5,17 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.interalia.kelloggs.gamecenter.pojo.CountryPojo;
 import com.interalia.kelloggs.gamecenter.pojo.ResultPojo;
-import com.interalia.kelloggs.gamecenter.pojo.UserPojo;
 import com.interalia.kelloggs.gamecenter.web.ResponseInterface;
 import com.interalia.kelloggs.gamecenter.web.task.RegistrationTask;
 
@@ -30,7 +28,6 @@ public class RegistrationActivity extends Activity implements ResponseInterface,
 	private EditText txtEmail;
 	private EditText txtBirthday;
 	private EditText txtNickname;
-	private CheckBox chkMale;
 	private ResultPojo resultPojo;
 	
 	@Override
@@ -45,7 +42,6 @@ public class RegistrationActivity extends Activity implements ResponseInterface,
 		txtEmail = (EditText)findViewById(R.id.txtEmail);
 		txtBirthday = (EditText)findViewById(R.id.txtBirthday);
 		txtNickname = (EditText)findViewById(R.id.txtNickname);
-		chkMale = (CheckBox)findViewById(R.id.chkMale);
 		
 		this.fillCountriesSpinner();
 		
@@ -68,11 +64,19 @@ public class RegistrationActivity extends Activity implements ResponseInterface,
 	public void onResultResponse(Object obj) {
 		// TODO Auto-generated method stub
 		resultPojo = (ResultPojo)obj;
+		Context context = getApplicationContext();
+		CharSequence text;
+		int duration = Toast.LENGTH_SHORT;
+		
 		if(resultPojo.isSuccess()){
-			Context context = getApplicationContext();
-			CharSequence text = "Succesfully registered!";
-			int duration = Toast.LENGTH_SHORT;
-
+			text = "Succesfully registered!";
+			Toast.makeText(context, text, duration).show();
+			
+			Intent i = new Intent(this, MainActivity.class);
+			startActivity(i);
+		}
+		else{
+			text = "Something went wrong, please try again";
 			Toast.makeText(context, text, duration).show();
 		}
 	}
@@ -85,41 +89,11 @@ public class RegistrationActivity extends Activity implements ResponseInterface,
 		String email = txtEmail.getText().toString();
 		String nickname = txtNickname.getText().toString();
 		String birthday = txtBirthday.getText().toString();
-		String gender;
-		if(chkMale.isChecked()){
-			gender = "m";
-		}
-		else{
-			gender = "f";
-		}
-		String countryId = "1";
-/*		userPojo.setUsername(txtUsername.getText().toString());
-		userPojo.setPassword(txtPassword.getText().toString());
-		userPojo.setEmail(txtEmail.getText().toString());
-		userPojo.setNickname(txtNickname.getText().toString());
-		
-		String birthday = txtBirthday.getText().toString();
-		
-		Calendar cal = Calendar.getInstance();
-	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-	    try {
-			cal.setTime(sdf.parse(birthday));
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();;
-			Context context = getApplicationContext();
-			CharSequence text = "Invalid date format";
-			int duration = Toast.LENGTH_SHORT;
+		String gender = "f";
 
-			Toast.makeText(context, text, duration).show();
-		}
-	    Date dob = cal.getTime();
-	    
-	    userPojo.setDateOfBirth(dob);
-	    CountryPojo country = new CountryPojo();
-	    country.setCountryId(1);
-	    userPojo.setCountry(country);*/
-	    
+		// Cambiar para que consulte catálogo.
+		String countryId = "1";
+
 	    RegistrationTask registrationTask = new RegistrationTask(this);
 	    registrationTask.execute(countryId, birthday, email, gender, nickname, password, username);
 	}
