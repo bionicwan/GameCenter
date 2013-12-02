@@ -391,7 +391,7 @@ containing a value of this type.
             </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name android:alignmentMode
+          @attr name com.interalia.kelloggs.gamecenter:alignmentMode
         */
         public static final int GridLayout_alignmentMode = 4;
         /**
@@ -407,7 +407,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:columnCount
+          @attr name com.interalia.kelloggs.gamecenter:columnCount
         */
         public static final int GridLayout_columnCount = 2;
         /**
@@ -428,7 +428,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:columnOrderPreserved
+          @attr name com.interalia.kelloggs.gamecenter:columnOrderPreserved
         */
         public static final int GridLayout_columnOrderPreserved = 6;
         /**
@@ -460,7 +460,7 @@ containing a value of this type.
 <tr><td><code>vertical</code></td><td>1</td><td> Defines a vertical widget. </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name android:orientation
+          @attr name com.interalia.kelloggs.gamecenter:orientation
         */
         public static final int GridLayout_orientation = 0;
         /**
@@ -476,7 +476,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:rowCount
+          @attr name com.interalia.kelloggs.gamecenter:rowCount
         */
         public static final int GridLayout_rowCount = 1;
         /**
@@ -497,7 +497,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:rowOrderPreserved
+          @attr name com.interalia.kelloggs.gamecenter:rowOrderPreserved
         */
         public static final int GridLayout_rowOrderPreserved = 5;
         /**
@@ -518,7 +518,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:useDefaultMargins
+          @attr name com.interalia.kelloggs.gamecenter:useDefaultMargins
         */
         public static final int GridLayout_useDefaultMargins = 3;
         /** Attributes that can be used with a GridLayout_Layout.
@@ -527,19 +527,19 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #GridLayout_Layout_android_layout_height com.interalia.kelloggs.gamecenter:android_layout_height}</code></td><td></td></tr>
-           <tr><td><code>{@link #GridLayout_Layout_android_layout_margin com.interalia.kelloggs.gamecenter:android_layout_margin}</code></td><td>
+           <tr><td><code>{@link #GridLayout_Layout_android_layout_height android:layout_height}</code></td><td></td></tr>
+           <tr><td><code>{@link #GridLayout_Layout_android_layout_margin android:layout_margin}</code></td><td>
               Specifies extra space on the left, top, right and bottom
               sides of this view.</td></tr>
-           <tr><td><code>{@link #GridLayout_Layout_android_layout_marginBottom com.interalia.kelloggs.gamecenter:android_layout_marginBottom}</code></td><td>
+           <tr><td><code>{@link #GridLayout_Layout_android_layout_marginBottom android:layout_marginBottom}</code></td><td>
               Specifies extra space on the bottom side of this view.</td></tr>
-           <tr><td><code>{@link #GridLayout_Layout_android_layout_marginLeft com.interalia.kelloggs.gamecenter:android_layout_marginLeft}</code></td><td>
+           <tr><td><code>{@link #GridLayout_Layout_android_layout_marginLeft android:layout_marginLeft}</code></td><td>
               Specifies extra space on the left side of this view.</td></tr>
-           <tr><td><code>{@link #GridLayout_Layout_android_layout_marginRight com.interalia.kelloggs.gamecenter:android_layout_marginRight}</code></td><td>
+           <tr><td><code>{@link #GridLayout_Layout_android_layout_marginRight android:layout_marginRight}</code></td><td>
               Specifies extra space on the right side of this view.</td></tr>
-           <tr><td><code>{@link #GridLayout_Layout_android_layout_marginTop com.interalia.kelloggs.gamecenter:android_layout_marginTop}</code></td><td>
+           <tr><td><code>{@link #GridLayout_Layout_android_layout_marginTop android:layout_marginTop}</code></td><td>
               Specifies extra space on the top side of this view.</td></tr>
-           <tr><td><code>{@link #GridLayout_Layout_android_layout_width com.interalia.kelloggs.gamecenter:android_layout_width}</code></td><td>
+           <tr><td><code>{@link #GridLayout_Layout_android_layout_width android:layout_width}</code></td><td>
               support versions.</td></tr>
            <tr><td><code>{@link #GridLayout_Layout_layout_column com.interalia.kelloggs.gamecenter:layout_column}</code></td><td>
         The column boundary delimiting the left of the group of cells
@@ -576,9 +576,9 @@ containing a value of this type.
             0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b
         };
         /**
-          <p>This symbol is the offset where the {@link com.interalia.kelloggs.gamecenter.R.attr#android_layout_height}
+          <p>This symbol is the offset where the {@link android.R.attr#layout_height}
           attribute's value can be found in the {@link #GridLayout_Layout} array.
-          @attr name android:android_layout_height
+          @attr name android:layout_height
         */
         public static final int GridLayout_Layout_android_layout_height = 1;
         /**
@@ -588,8 +588,9 @@ containing a value of this type.
               Specifies extra space on the left, top, right and bottom
               sides of this view. This space is outside this view's bounds.
         
-          <p>This corresponds to the global attribute          resource symbol {@link com.interalia.kelloggs.gamecenter.R.attr#android_layout_margin}.
-          @attr name android:android_layout_margin
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#layout_margin}.
+          @attr name android:layout_margin
         */
         public static final int GridLayout_Layout_android_layout_margin = 2;
         /**
@@ -599,8 +600,9 @@ containing a value of this type.
               Specifies extra space on the bottom side of this view.
               This space is outside this view's bounds.
         
-          <p>This corresponds to the global attribute          resource symbol {@link com.interalia.kelloggs.gamecenter.R.attr#android_layout_marginBottom}.
-          @attr name android:android_layout_marginBottom
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#layout_marginBottom}.
+          @attr name android:layout_marginBottom
         */
         public static final int GridLayout_Layout_android_layout_marginBottom = 6;
         /**
@@ -610,8 +612,9 @@ containing a value of this type.
               Specifies extra space on the left side of this view.
               This space is outside this view's bounds.
         
-          <p>This corresponds to the global attribute          resource symbol {@link com.interalia.kelloggs.gamecenter.R.attr#android_layout_marginLeft}.
-          @attr name android:android_layout_marginLeft
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#layout_marginLeft}.
+          @attr name android:layout_marginLeft
         */
         public static final int GridLayout_Layout_android_layout_marginLeft = 3;
         /**
@@ -621,8 +624,9 @@ containing a value of this type.
               Specifies extra space on the right side of this view.
               This space is outside this view's bounds.
         
-          <p>This corresponds to the global attribute          resource symbol {@link com.interalia.kelloggs.gamecenter.R.attr#android_layout_marginRight}.
-          @attr name android:android_layout_marginRight
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#layout_marginRight}.
+          @attr name android:layout_marginRight
         */
         public static final int GridLayout_Layout_android_layout_marginRight = 5;
         /**
@@ -632,8 +636,9 @@ containing a value of this type.
               Specifies extra space on the top side of this view.
               This space is outside this view's bounds.
         
-          <p>This corresponds to the global attribute          resource symbol {@link com.interalia.kelloggs.gamecenter.R.attr#android_layout_marginTop}.
-          @attr name android:android_layout_marginTop
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#layout_marginTop}.
+          @attr name android:layout_marginTop
         */
         public static final int GridLayout_Layout_android_layout_marginTop = 4;
         /**
@@ -644,8 +649,9 @@ containing a value of this type.
               redefined in the support library name space.
         
  START MarginLayout layoutparams 
-          <p>This corresponds to the global attribute          resource symbol {@link com.interalia.kelloggs.gamecenter.R.attr#android_layout_width}.
-          @attr name android:android_layout_width
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#layout_width}.
+          @attr name android:layout_width
         */
         public static final int GridLayout_Layout_android_layout_width = 0;
         /**
@@ -664,7 +670,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:layout_column
+          @attr name com.interalia.kelloggs.gamecenter:layout_column
         */
         public static final int GridLayout_Layout_layout_column = 9;
         /**
@@ -685,7 +691,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:layout_columnSpan
+          @attr name com.interalia.kelloggs.gamecenter:layout_columnSpan
         */
         public static final int GridLayout_Layout_layout_columnSpan = 10;
         /**
@@ -730,7 +736,7 @@ containing a value of this type.
 <tr><td><code>end</code></td><td>0x00800005</td><td> Push object to the end of its container, not changing its size. </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name android:layout_gravity
+          @attr name com.interalia.kelloggs.gamecenter:layout_gravity
         */
         public static final int GridLayout_Layout_layout_gravity = 11;
         /**
@@ -750,7 +756,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:layout_row
+          @attr name com.interalia.kelloggs.gamecenter:layout_row
         */
         public static final int GridLayout_Layout_layout_row = 7;
         /**
@@ -771,7 +777,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:layout_rowSpan
+          @attr name com.interalia.kelloggs.gamecenter:layout_rowSpan
         */
         public static final int GridLayout_Layout_layout_rowSpan = 8;
     };

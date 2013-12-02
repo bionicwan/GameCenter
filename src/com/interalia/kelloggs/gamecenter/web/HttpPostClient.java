@@ -11,6 +11,9 @@ import java.net.URLEncoder;
 
 import org.apache.http.client.HttpClient;
 
+import com.interalia.kelloggs.gamecenter.infrastructure.Sys;
+import com.interalia.kelloggs.gamecenter.utilities.RequestSigning;
+
 import android.content.Context;
 import android.util.Base64;
 

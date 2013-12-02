@@ -1,4 +1,4 @@
-package com.interalia.kelloggs.gamecenter.web.resultparsers;
+package com.interalia.kelloggs.gamecenter.utilities.parsers;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Date;

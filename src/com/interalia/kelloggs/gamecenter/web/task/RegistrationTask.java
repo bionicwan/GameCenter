@@ -2,11 +2,11 @@ package com.interalia.kelloggs.gamecenter.web.task;
 
 import android.os.AsyncTask;
 
+import com.interalia.kelloggs.gamecenter.infrastructure.ResponseInterface;
 import com.interalia.kelloggs.gamecenter.pojo.ResultPojo;
 import com.interalia.kelloggs.gamecenter.pojo.UserPojo;
+import com.interalia.kelloggs.gamecenter.utilities.parsers.ResultParser;
 import com.interalia.kelloggs.gamecenter.web.HttpPostClient;
-import com.interalia.kelloggs.gamecenter.web.ResponseInterface;
-import com.interalia.kelloggs.gamecenter.web.resultparsers.ResultParser;
 
 public class RegistrationTask extends AsyncTask<String, Void, ResultPojo> {
 	

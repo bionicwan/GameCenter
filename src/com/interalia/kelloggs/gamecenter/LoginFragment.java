@@ -10,9 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.interalia.kelloggs.gamecenter.pojo.UserPojo;
-import com.interalia.kelloggs.gamecenter.web.ListenerInterface;
-import com.interalia.kelloggs.gamecenter.web.ResponseInterface;
+import com.interalia.kelloggs.gamecenter.infrastructure.ListenerInterface;
+import com.interalia.kelloggs.gamecenter.infrastructure.ResponseInterface;
 import com.interalia.kelloggs.gamecenter.web.task.LoginTask;
 
 public class LoginFragment extends Fragment implements OnClickListener {
@@ -21,8 +20,6 @@ public class LoginFragment extends Fragment implements OnClickListener {
 	private Button btnRegister;
 	private EditText txtUsername;
 	private EditText txtPassword;
-	private ResponseInterface response;
-	private UserPojo user;
 	private ListenerInterface listener;
 	
 	public static LoginFragment newInstance(ListenerInterface listener){

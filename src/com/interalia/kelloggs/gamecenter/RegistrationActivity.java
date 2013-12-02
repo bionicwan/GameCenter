@@ -15,8 +15,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.interalia.kelloggs.gamecenter.infrastructure.ResponseInterface;
 import com.interalia.kelloggs.gamecenter.pojo.ResultPojo;
-import com.interalia.kelloggs.gamecenter.web.ResponseInterface;
 import com.interalia.kelloggs.gamecenter.web.task.RegistrationTask;
 
 public class RegistrationActivity extends Activity implements ResponseInterface, OnClickListener {
@@ -25,6 +25,7 @@ public class RegistrationActivity extends Activity implements ResponseInterface,
 	private Button btnSignUp;
 	private EditText txtUsername;
 	private EditText txtPassword;
+	private EditText txtPasswordConfirmation;
 	private EditText txtEmail;
 	private EditText txtBirthday;
 	private EditText txtNickname;
@@ -39,6 +40,7 @@ public class RegistrationActivity extends Activity implements ResponseInterface,
 		btnSignUp = (Button)findViewById(R.id.btnSignUp);
 		txtUsername = (EditText)findViewById(R.id.txtUsername);
 		txtPassword = (EditText)findViewById(R.id.txtPassword);
+		txtPasswordConfirmation = (EditText)findViewById(R.id.txtConfirmPassword);
 		txtEmail = (EditText)findViewById(R.id.txtEmail);
 		txtBirthday = (EditText)findViewById(R.id.txtBirthday);
 		txtNickname = (EditText)findViewById(R.id.txtNickname);
@@ -86,7 +88,18 @@ public class RegistrationActivity extends Activity implements ResponseInterface,
 		// TODO Auto-generated method stub
 		String username = txtUsername.getText().toString();
 		String password = txtPassword.getText().toString();
-		String email = txtEmail.getText().toString();
+		String passwordConfirmation = txtPasswordConfirmation.getText().toString();
+		
+		if(!password.equals(passwordConfirmation)){
+			Context context = getApplicationContext();
+			CharSequence text;
+			int duration = Toast.LENGTH_SHORT;
+			text = "Something went wrong, please try again";
+			Toast.makeText(context, text, duration).show();
+			return;
+		}
+		
+	 	String email = txtEmail.getText().toString();
 		String nickname = txtNickname.getText().toString();
 		String birthday = txtBirthday.getText().toString();
 		String gender = "f";
